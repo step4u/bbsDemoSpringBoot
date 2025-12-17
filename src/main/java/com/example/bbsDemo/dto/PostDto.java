@@ -1,0 +1,7 @@
+package com.example.bbsDemo.dto;
+
+import java.time.LocalDateTime;
+
+public record PostDto(Long id, String title, String author, LocalDateTime createdAt, int views) {
+    
+}
