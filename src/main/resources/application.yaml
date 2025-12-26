@@ -1,3 +1,31 @@
+server:
+  port: 8088
+
 spring:
   application:
     name: bbsDemo
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.SQLServerDialect
+  datasource:
+    url: "jdbc:sqlserver://localhost;instanceName=MSSQLSERVER01;databaseName=demoBbs;encrypt=true;trustServerCertificate=true"
+    username: sa
+    password: 1234
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: /api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+    display-request-duration: true
+    doc-expansion: none
+  packages-to-scan: com.example.bbsDemo.controller
+  paths-to-match: /api/**

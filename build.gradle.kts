@@ -1,6 +1,6 @@
 plugins {
 	java
-	id("org.springframework.boot") version "3.5.8"
+	id("org.springframework.boot") version "3.5.9"
 	id("io.spring.dependency-management") version "1.1.7"
 }
 
@@ -27,9 +27,10 @@ repositories {
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-web")
+	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0")
 	compileOnly("org.projectlombok:lombok")
-	runtimeOnly("com.microsoft.sqlserver:mssql-jdbc")
 	annotationProcessor("org.projectlombok:lombok")
+	runtimeOnly("com.microsoft.sqlserver:mssql-jdbc")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
